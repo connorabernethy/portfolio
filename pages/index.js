@@ -1,4 +1,5 @@
-import { Box, Container, Heading, useColorModeValue } from "@chakra-ui/react"
+import { Box, Container, Grid, Heading, SimpleGrid, useColorModeValue } from "@chakra-ui/react"
+import GridBox from "../components/gridbox"
 
 const Page = () => {
     return (
@@ -14,6 +15,12 @@ const Page = () => {
                     <p>Developer, Creator, and Digital Connoisseur</p>
                 </Box>
             </Box>
+            <SimpleGrid columns={2} spacing={5} mt="5rem">
+                <GridBox></GridBox>
+                <GridBox></GridBox>
+                <GridBox></GridBox>
+                <GridBox></GridBox>
+            </SimpleGrid>
         </Container>
     )
 }

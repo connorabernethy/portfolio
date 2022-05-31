@@ -53,11 +53,9 @@ const Obj = () => {
             camera.lookAt(target)
             setCamera(camera)
 
-            const pointLight = new THREE.PointLight(0xd33, 5.5)
-            pointLight.position.x = 3
-            pointLight.position.y = -5
-            pointLight.position.z = 1
-            scene.add(pointLight)
+            const pointLight = new THREE.PointLight(0xd33234, 5.5)
+            const ambientLight = new THREE.AmbientLight(0x23d, 1)
+            scene.add(pointLight, ambientLight)
 
             // const ambientLight = new THREE.AmbientLight(0xcccccc, 100)
             // scene.add(ambientLight)
@@ -71,7 +69,7 @@ const Obj = () => {
 
             const normalTexture = textureLoader.load('/public/normal.png')
 
-            const geometry = new THREE.SphereGeometry( 2, 32, 32 )
+            const geometry = new THREE.BoxGeometry( 5, 5, 5 )
             const color = new THREE.Color(0x292929)
             const material = new THREE.MeshStandardMaterial( { color: color} )
             material.normalMap = normalTexture
