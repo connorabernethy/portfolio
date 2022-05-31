@@ -35,7 +35,7 @@ const Obj = () => {
                 alpha: true
             })
             renderer.setPixelRatio(window.devicePixelRatio)
-            renderer.setSize(scW, scH)
+            renderer.setSize(scW, scH )
             renderer.outputEncoding = THREE.sRGBEncoding
             container.appendChild(renderer.domElement)
             setRenderer(renderer)
@@ -53,16 +53,30 @@ const Obj = () => {
             camera.lookAt(target)
             setCamera(camera)
 
-            const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
-            scene.add(ambientLight)
+            const pointLight = new THREE.PointLight(0xd33, 5.5)
+            pointLight.position.x = 3
+            pointLight.position.y = -5
+            pointLight.position.z = 1
+            scene.add(pointLight)
+
+            // const ambientLight = new THREE.AmbientLight(0xcccccc, 100)
+            // scene.add(ambientLight)
 
             const controls = new OrbitControls(camera, renderer.domElement)
             controls.autoRotate = true
             controls.target = target
             setControls(controls)
 
-            const geometry = new THREE.SphereGeometry( 2, 4, 8 )
-            const material = new THREE.MeshStandardMaterial( { color: 'lavender' } )
+            const textureLoader = new THREE.TextureLoader()
+
+            const normalTexture = textureLoader.load('/public/normal.png')
+
+            const geometry = new THREE.SphereGeometry( 2, 32, 32 )
+            const color = new THREE.Color(0x292929)
+            const material = new THREE.MeshStandardMaterial( { color: color} )
+            material.normalMap = normalTexture
+            material.metalness = 0.7
+            material.roughness = 0.3
             const sphere = new THREE.Mesh( geometry, material )
             scene.add( sphere )
 
