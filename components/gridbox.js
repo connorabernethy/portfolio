@@ -1,6 +1,6 @@
 import { Box, Container, Text, useColorModeValue } from "@chakra-ui/react"
 
-const GridBox = () => {
+const GridBox = (children) => {
     return (
         <Box borderRadius="lg" bg={useColorModeValue('whitesmoke', 'whiteAlpha.200')} p={5}
         padding="128px"

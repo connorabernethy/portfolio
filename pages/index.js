@@ -1,7 +1,12 @@
-import { Box, Container, Grid, Heading, SimpleGrid, useColorModeValue } from "@chakra-ui/react"
+import React, { useState } from 'react'
+import { Box, Container, Button, Input, Heading, SimpleGrid, useColorModeValue } from "@chakra-ui/react"
 import GridBox from "../components/gridbox"
 
 const Page = () => {
+    const [count, setCount] = useState("")
+    const handleClick = () => {
+        setCount(count += "2")
+    }
     return (
         <Container>
             <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} mb={6} marginTop={10} align="center">
@@ -10,8 +15,10 @@ const Page = () => {
             <Box display={{md: 'flex'}}>
                 <Box flexGrow={1}>
                     <Heading as="h2" variant="page-title">
-                        Connor Abernethy
+                        Connor Abernethy {count}
                     </Heading>
+                    <Input className="inputbox" pr="4.5rem"></Input>
+                    <Button onClick={handleClick}>Testing</Button>
                     <p>Developer, Creator, and Digital Connoisseur</p>
                 </Box>
             </Box>
