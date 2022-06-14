@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Container, Button, Input, Heading, SimpleGrid, useColorModeValue } from "@chakra-ui/react"
-import GridBox from "../components/gridbox"
+import NoSsr from '../components/no-ssr'
+import Obj from '../components/3d'
 
 const Page = () => {
     const [count, setCount] = useState("")
@@ -8,26 +9,22 @@ const Page = () => {
         setCount(count += "2")
     }
     return (
-        <Container>
-            <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} mb={6} marginTop={10} align="center">
-                Hi, I&apos;m a full-stack developer from Arizona!
-            </Box>
+        <Container maxW='container.lg'>
             <Box display={{md: 'flex'}}>
                 <Box flexGrow={1}>
-                    <Heading as="h2" variant="page-title">
-                        Connor Abernethy {count}
+                    <Heading as="h2" mt={10} mb={10} size='4xl'>
+                        Welcome {count}
                     </Heading>
-                    <Input className="inputbox" pr="4.5rem"></Input>
-                    <Button onClick={handleClick}>Testing</Button>
-                    <p>Developer, Creator, and Digital Connoisseur</p>
+                    <Heading as='h2' variant='section-title'>
+                        Full Stack Developer & Creator
+                    </Heading>
                 </Box>
             </Box>
-            <SimpleGrid columns={2} spacing={5} mt="5rem">
-                <GridBox></GridBox>
-                <GridBox></GridBox>
-                <GridBox></GridBox>
-                <GridBox></GridBox>
-            </SimpleGrid>
+            <Container maxW='100%' mt='1rem' alignItems='center' alignSelf='center' alignContent='center' textAlign='center'>
+                <NoSsr>
+                    <Obj />
+                </NoSsr>
+            </Container>
         </Container>
     )
 }

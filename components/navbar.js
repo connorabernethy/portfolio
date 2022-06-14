@@ -60,10 +60,10 @@ const Navbar = props => {
                 mt={{base: 4, nmd: 0}}>
                 </Stack>
                 <Box flex={1} align="right">
-                    <ThemeToggleButton />
+                    <ThemeToggleButton/>
                     <Box ml={2} display={{base: 'inline-block', md: 'none'}}/>
                     <Menu>
-                        <MenuButton as={IconButton} icon={<HamburgerIcon/>} variant="outline" aria-label="Options"/>
+                        <MenuButton ml={2} as={IconButton} icon={<HamburgerIcon/>} variant="outline" aria-label="Options"/>
                         <MenuList>
                             <NextLink href="/projects" passHref>
                                 <MenuItem as={Link}>Projects</MenuItem>

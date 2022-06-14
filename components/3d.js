@@ -53,30 +53,28 @@ const Obj = () => {
             camera.lookAt(target)
             setCamera(camera)
 
-            const pointLight = new THREE.PointLight(0xd33234, 5.5)
-            const ambientLight = new THREE.AmbientLight(0x23d, 1)
-            scene.add(pointLight, ambientLight)
+            const ambientLight = new THREE.AmbientLight('rgb(255, 193, 143)', 0.7)
+            scene.add(ambientLight)
 
-            // const ambientLight = new THREE.AmbientLight(0xcccccc, 100)
-            // scene.add(ambientLight)
+            // const dl = new THREE.DirectionalLight('rgb(143, 205, 255)', 1)
+            // dl.position.set(3, 1, 2)
+            // const helper = new THREE.DirectionalLightHelper(dl, 3)
+            // scene.add( dl )
 
             const controls = new OrbitControls(camera, renderer.domElement)
             controls.autoRotate = true
             controls.target = target
+            controls.enableZoom = false
             setControls(controls)
 
-            const textureLoader = new THREE.TextureLoader()
-
-            const normalTexture = textureLoader.load('/public/normal.png')
-
             const geometry = new THREE.BoxGeometry( 5, 5, 5 )
-            const color = new THREE.Color(0x292929)
+            const color = new THREE.Color(0xffffff)
             const material = new THREE.MeshStandardMaterial( { color: color} )
-            material.normalMap = normalTexture
-            material.metalness = 0.7
-            material.roughness = 0.3
-            const sphere = new THREE.Mesh( geometry, material )
-            scene.add( sphere )
+            material.metalness = 2
+            material.opacity = 0.7
+            material.wireframe = true;
+            const cube = new THREE.Mesh( geometry, material )
+            scene.add( cube )
 
             let req = null
             let frame = 0
