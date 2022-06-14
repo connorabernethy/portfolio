@@ -6,6 +6,7 @@ import Project from "../components/project"
 const Projects = () => {
     return (
     <Box mt='3rem'>
+        <Heading mt='3rem' mb='3rem'>Projects</Heading>
         <VStack divider={<StackDivider />} spacing={4} align='stretch'>
             <Project>Testing</Project>
             <Project>Test2</Project>
