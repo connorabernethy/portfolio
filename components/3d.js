@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallBack } from 'react'
 import { Box, Spinner } from '@chakra-ui/react'
+import { useColorModeValue } from '@chakra-ui/react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
@@ -23,6 +24,8 @@ const Obj = () => {
 
     const [ scene ] = useState(new THREE.Scene())
     const [ _controls, setControls ] = useState()
+
+    const cubeColor = useColorModeValue('blue', 'green')
 
     useEffect(() => {
         const { current: container } = refContainer
@@ -56,7 +59,7 @@ const Obj = () => {
             // const ambientLight = new THREE.AmbientLight('rgb(255, 193, 143)', 1)
             // scene.add(ambientLight)
 
-            const ambientLight2 = new THREE.AmbientLight('rgb(143, 205, 255)', 1)
+            const ambientLight2 = new THREE.AmbientLight(cubeColor, 1)
             scene.add(ambientLight2)
 
             // const dl = new THREE.DirectionalLight('rgb(143, 205, 255)', 1)
