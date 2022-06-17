@@ -53,8 +53,11 @@ const Obj = () => {
             camera.lookAt(target)
             setCamera(camera)
 
-            const ambientLight = new THREE.AmbientLight('rgb(255, 193, 143)', 0.7)
-            scene.add(ambientLight)
+            // const ambientLight = new THREE.AmbientLight('rgb(255, 193, 143)', 1)
+            // scene.add(ambientLight)
+
+            const ambientLight2 = new THREE.AmbientLight('rgb(143, 205, 255)', 1)
+            scene.add(ambientLight2)
 
             // const dl = new THREE.DirectionalLight('rgb(143, 205, 255)', 1)
             // dl.position.set(3, 1, 2)
@@ -70,8 +73,6 @@ const Obj = () => {
             const geometry = new THREE.BoxGeometry( 5, 5, 5 )
             const color = new THREE.Color(0xffffff)
             const material = new THREE.MeshStandardMaterial( { color: color} )
-            material.metalness = 2
-            material.opacity = 0.7
             material.wireframe = true;
             const cube = new THREE.Mesh( geometry, material )
             scene.add( cube )

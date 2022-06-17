@@ -9,13 +9,13 @@ const Projects = () => {
     <Box mt='3rem'>
         <Heading mt='3rem' mb='3rem'>Projects</Heading>
         <VStack divider={<StackDivider />} spacing={4} align='stretch'>
-            <Project imgUrl='https://pbs.twimg.com/profile_images/1146571899616530433/j9ps30tx_400x400.png'>
+            <Project imgUrl='https://pbs.twimg.com/profile_images/1146571899616530433/j9ps30tx_400x400.png' url=''>
             Pioneer Sand - A Fullstack website created with Next.js, Typescript and React.</Project>
-            <Project imgUrl={imgPlaceholder}>Test2</Project>
-            <Project imgUrl={imgPlaceholder}>Test3</Project>
-            <Project imgUrl={imgPlaceholder}>Test4</Project>
-            <Project imgUrl={imgPlaceholder}>Test5</Project>
-            <Project imgUrl={imgPlaceholder}>Test6</Project>
+            <Project imgUrl={imgPlaceholder} url=''>Test2</Project>
+            <Project imgUrl={imgPlaceholder} url=''>Test3</Project>
+            <Project imgUrl={imgPlaceholder} url=''>Test4</Project>
+            <Project imgUrl={imgPlaceholder} url=''>Test5</Project>
+            <Project imgUrl={imgPlaceholder} url=''>Test6</Project>
         </VStack>
     </Box>
     )
